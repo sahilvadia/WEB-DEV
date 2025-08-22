@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Use min-height to handle longer forms and scrolling */
+    margin: 0;
+    padding: 20px 0; /* Add some vertical padding */
+    box-sizing: border-box;
+}
+
+/* Updated to use the .card class from your HTML */
+.card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Set a max-width for better responsiveness */
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #333;
+    text-align: center;
+}
+
+/* Updated to use the .input-group class from your HTML */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Combined and expanded styles for all text-based inputs */
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"],
+.input-group input[type="date"],
+.input-group input[type="tel"],
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    font-size: 16px;
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Added focus styles for better accessibility and UX */
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Styles for the radio button group */
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between radio options */
+}
+
+.radio-group label {
+    font-weight: normal;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Updated to style the button element with class .submit */
+button.submit {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button.submit:hover {
+    background-color: #0056b3;
+}

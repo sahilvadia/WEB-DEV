@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <style>
+
+    /* universal selector */
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        /* type selector */
+
+        p{
+            color: pink;
+        }
+
+        /* class selector */
+
+        .school{
+            background-color: aqua;
+        }
+
+        /* attribute selector */
+        input[type="text"]{
+            border-color: brown;
+        }
+
+        /* decendent selector */
+        div ul li{
+            color: rgb(97, 138, 57);
+        }
+
+        /* child selector */
+        div>ul{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        /* adjacent sibling selector */
+        h1 + p{
+            background-color: blue;
+        }
+
+        h1:hover{
+            background-color: pink;
+            padding: 20px;
+        }
+
+        li::first-letter{
+            font-size: 30px;
+            color: black;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>hello world</h1>
+    <div>
+        <ul>
+            <li>orange</li>
+            <li>mango</li>
+            <li>apple</li>
+            <li>banana</li>
+            <li>kiwi</li>
+
+        </ul>
+        <p>this is para in pink</p>
+
+    </div>
+
+    <div>
+        <table class="school">
+            <tr>
+                <th>name</th>
+                <th>class</th>
+                <th>marks</th>
+            </tr>
+
+            <tr>
+                <td>athar</td>
+                <td>orange</td>
+                <td>88</td>
+            </tr>
+
+            <tr>
+                <td>penil</td>
+                <td>orange</td>
+                <td>89</td>
+            </tr>
+        </table>
+
+        <input type="text" placeholder="name">
+    </div>
+
+</body>
+
+</html>
