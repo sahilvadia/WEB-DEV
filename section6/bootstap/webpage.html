@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+        rel="stylesheet" />
+    
+    <style>
+    /* General styling for font consistency */
+    *, *::after, *::before {
+        box-sizing: border-box;
+        font-family: "Bricolage Grotesque", sans-serif;
+    }
+
+    .btn {
+        white-space: nowrap;
+    }
+    .center-container{
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .contant {
+        position: relative; 
+        width: 70%; 
+    }
+
+    .background-img{
+        height: 150px; 
+        width: 80%; 
+        margin: 0 auto; 
+        background-color: lightblue; 
+        background-image: url(./sky.jpg);
+        background-size: cover; 
+        background-position: center bottom; 
+        background-repeat: repeat;
+        border-radius: 80px;
+        position: relative; 
+
+    }
+
+    .airplane-img {
+        position: absolute;
+        bottom: 10px; 
+        transform: translateX(-50%); 
+        width: 60%; 
+        z-index: 1; 
+        height: auto;
+    transition: transform 0.3s ease-in-out, bottom 0.3s ease-in-out, width 0.3s ease-in-out;     }
+
+     .airplane-img:hover {
+        transform: translateX(-50%) translateY(-20px) rotate(10deg); 
+        width: 100%;
+        bottom: -30px;
+    }
+
+    .navbar-brand img{
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+    }
+
+    .tag-line{
+        font-size: 60px;
+        margin-top: -20px;
+        margin: 20px;
+    }
+
+   
+</style>
+</head>
+<body>
+    <div class="root">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu3BWZq1obKqquw2SzCS1LNt9bF3dHOUAvRQ&s" alt="Logo" width="30" height="24" class="d-inline-block align-text-top me-2" />
+                    Air-Ahmedabad
+                </a>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex ms-auto">
+                    <button class="btn btn-primary" type="submit">Contact</button>
+                </div>
+            </div>
+        </nav>
+       <main class="container center-container">
+    <div class="contant">
+        <h1 class="tag-line">Find and Book A Great Experience</h1>
+        <div class="background-img">
+        </div>
+                    <img src="./frontplansvg.png" alt="Airplane" class="airplane-img">
+
+    </div>
+</main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YxG0r8x4w3f2cR2b4a5d8k7l8b9c6d5b7e8d6f5s7h3f4j1g2h3c2k1d9b8a7c6f5d4e3a2b" crossorigin="anonymous"></script>
+</body>
+</html>

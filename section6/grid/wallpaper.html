@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+        *,
+        *::after,
+        *::before{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Bricolage Grotesque", sans-serif;
+            padding: 10px;
+        }
+        .container{
+            background-color: #e2e2cf;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 10px;
+        }
+        .wallpaper-grid{
+            display: grid;
+            background-color: yellowgreen;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr);
+            padding: 10px;
+            border: 2px solid black;
+        }
+        h1,h2{
+            font-size: 1.5rem;
+            color: #333;
+            padding: 10px;
+        }
+        .child{
+           display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+        border: 1px solid #999;
+        }
+       
+        .child img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+       
+        .child1{
+            grid-area: 1 / 1 / 1 / 3 ;
+        }
+
+        .child2{
+            grid-area: 6 / 1 / 6 / 3 ;
+        }
+        .child3{
+            grid-area: 7/1/7/8;
+        }
+        .child4{
+            grid-area: 6/3/6/8;
+        }
+        .child5{
+            grid-area: 1/3/6/8;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+            <h1>Wallpapers</h1>
+        <div class="wallpaper-grid">
+            <div class="child child1"><img src="../../assets/icons/4k HD Wallpaper_ Pixar-style Lightning McQueen from Harry Potter.jpeg" alt="image not found"></div>
+            <div class="child child2"><img src="../../assets/icons/7309681.jpg" alt=""></div>
+            <div class="child child3"><img src="../.././assets/icons/Luffy__ The next King of Pirates 💫.jpeg" alt=""></div>
+            <div class="child child4"><img src="../../assets/icons/ゴッホ_..jpeg" alt=""></div>
+            <div class="child child5"><img src="../.././assets/icons/QlVyR-12.jpeg" alt=""></div>
+            <div class="child child6"><img src="../.././assets/icons/QlVyR-12.jpeg" alt=""></div>
+            <div class="child child7"><img src="../.././assets/icons/RA1lLkYD.jpeg" alt=""></div>
+            <div class="child child8"><img src="../.././assets/icons/ゴッホ_..jpeg" alt=""></div>
+            <div class="child child9"><img src="../.././assets/icons/person.jpeg" alt=""></div>
+
+
+        </div>
+    </div>
+</body>
+</html>

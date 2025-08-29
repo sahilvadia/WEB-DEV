@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pattern Example</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #3b355c; /* Same as your image background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .root {
+      display: flex;
+      flex-direction: column;
+      gap: 30px; /* space between rows */
+    }
+
+    .master {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px; /* space between boxes */
+    }
+
+    .child {
+      width: 120px;
+      height: 30px;
+      background: white;
+    }
+
+    /* Rotate left and right children */
+    .master .child:first-child {
+      transform: rotate(-10deg);
+      width: 100px;
+    }
+
+    .master .child:last-child {
+      transform: rotate(10deg);
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="root">
+    <div class="master">
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+    <div class="master">
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+    <div class="master">
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+  </div>
+</body>
+</html>

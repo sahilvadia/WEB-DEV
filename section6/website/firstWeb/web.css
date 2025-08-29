@@ -1,0 +1,59 @@
+
+*{
+    margin: 0%;
+  font-family: "Bricolage Grotesque", sans-serif;
+  
+}
+  .logo{
+    height: 150px;
+}
+.container{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #da7171, #252583);
+
+}
+.content{
+    background-color: #ffff;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 2px;
+    width: 300px;
+}
+h1{
+    font-weight: 800;
+    text-transform: capitalize;
+    margin: 20px;
+}
+p{
+    margin: 2px;
+}
+input{
+    margin-top: 10px;
+    padding: 4px;
+
+}
+
+.submit {
+        background: linear-gradient(to right, #ff6e7f 0%, #4fb2e7  51%, #ff6e7f  100%);
+            padding: 10px 30px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white; 
+            box-shadow: 0 0 20px #a1a1a1;
+            border-radius: 10px;
+            margin: 20px;            
+          }
+
+.submit:hover {
+            background-position: right center;
+            font-weight: 600;
+            text-decoration: none;
+            color: black;
+          }
+         
+         

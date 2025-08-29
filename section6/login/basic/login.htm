@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: aliceblue;
+        }
+        .login{
+             font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+        }
+        form{
+            padding: 20px;
+            border-radius: 0px 10px 10px 0;
+            text-align: center;
+            width: 200px;
+            padding: 10px;
+            background-color: greenyellow;
+            border: solid black 2px;
+        }
+        input{
+            padding: 5px;
+            margin: 2px;
+            color: black;
+            border-radius: 5px;
+            background-color: greenyellow;
+            place-content: inherit;
+        }
+        .submit{
+            padding: 2px;
+            margin: 10px;
+            width: 100px;
+            border-radius: 5px;
+            background-color: greenyellow;
+            font-weight: 600;
+        }
+        .submit:hover{
+            background-color: green;
+            color: aliceblue;
+        }
+        h2{
+            margin: 10px;
+            font-family: monospace;
+            font-weight: 600;
+            background-color: greenyellow;
+
+        }
+        input::placeholder {
+        font-weight: bold;
+        opacity: 0.5;
+        color: black;
+        }
+        input:focus{
+            border-color: black;
+        }
+        .avatar{
+            width: 200px;
+            border: 3px solid black;
+            border-radius: 10px 0px 0px 10px;
+        }
+        .avatar:hover{
+          transform: scale(1.05);
+            transition: transform 0.5s ease-in-out; 
+                      border: 2px solid black;
+
+        }
+        span{
+            background-color: greenyellow;
+        }
+        
+
+    </style>
+
+    
+</head>
+<body>
+    <div class="login">
+        <img src="./../../../assets/icons/7309681.jpg" class="avatar" alt="">
+        <form action="">
+        <h2> <span class="auto-type"></span></h2>
+        <input type="text" name="" id="" placeholder="username">
+        <input type="email" name="" id="" placeholder="email">
+        <input type="password" name="" id="" placeholder="password">
+        <button type="submit" class="submit">submit</button>
+        </form>
+    </div>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script >
+        var typed = new Typed(".auto-type",{
+            strings: [
+                "Login",
+                "git push origin master",
+                "401 Unauthorized",
+                "I'm in.",
+                "Access Granted",
+                "sudo login"
+            ],
+            
+            typeSpeed:40,
+            backSpeed:10,
+            loop: true
+        })
+    </script>
+</body>
+</html>
