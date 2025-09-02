@@ -1,0 +1,168 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    font-family: "Bricolage Grotesque", sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 780px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 20px;
+}
+
+.layout{
+    height: 100vh;
+    background: linear-gradient(to bottom , white, #dbeafe, #dbeafe,  white);
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 3fr 3fr 1fr;
+    align-items: center;
+    padding: 10px;
+    /* margin: 10px; */
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+    list-style: none;
+}
+button{
+    padding: 10px;
+    margin: 10px;
+    background-color: #0d6efd;
+    border-radius: 10px;
+    width: 120px;
+    color: white;
+    font-size: 14px;
+    border:none;
+    font-weight: 600;
+    cursor: pointer;
+}
+nav button:hover{
+        box-shadow: 1px 1px 1px black;
+}
+
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 85vh;
+}
+
+.hero .p-link{
+    font-size: 12px;
+    background-color: oklab(0.240828 0.00160428 -0.0114013 / 0.06);
+    padding: 8px 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.hero h1{
+    font-size: 60px;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 40px;
+}
+
+.tag-line{
+    font-size: 18px;
+    max-width: 40vw;
+    text-align: center;
+    margin: 10px;
+}
+
+.buttons{
+    margin-top: 20px;
+    max-width: 300px;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.3);
+}
+
+.buttons .no-background{
+    background-color: transparent;
+    color: black;
+}
+
+span{
+    font-size: 25px;
+}
+
+.buttons button{
+    margin: 0px;
+}
+.clock{
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.p-description{
+    font-size: 13px;
+    color: gray;
+    margin-top: 20px;
+}
+.hr-line{
+    opacity: 0.1;
+    width: 100vw;
+}
+
+
+
+.line{
+    height: 100%;
+    position: absolute;
+}
+.left-line{
+     background: linear-gradient(to bottom, white,gray,gray,white);
+    opacity: 0.5;
+    height: 100%;
+    width: 1px;
+
+    position: absolute;
+    left: -10px;
+
+}
+
+.right-line{
+    background: linear-gradient(to bottom, white,gray,gray,white);
+    opacity: 0.5;
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    right: -10px;
+}
+
+hr {
+    width: 100%;
+    max-width: 780px; /* matches .container max-width */
+    margin: 40px auto; /* center it and add vertical spacing */
+    border: none;
+    border-top: 1px solid #000;
+    opacity: 0.1;
+}
+
+.hero-image-container{
+    align-items: center;
+}
+.hero-image{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
