@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.layout{
+    display: flex;
+    justify-content: center;
+/* align-items: center; */
+    height: 100vh;
+}
+.container{
+    width: 80vw;
+}
+h1{
+    background-color: blueviolet;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+p{
+    margin: 10px;
+}
+.lines{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.rightline{
+    height: 100%;
+    /* position: relative; */
+    width: 1px;
+    /* left: -10px; */
+    background-color: black
+}
+.leftline{
+    /* position: absolute; */
+    height: 100%;
+    width: 1px;
+    background-color: black
+}
+.btn{
+    padding: 5px;
+}
+
+.bulb{
+    /* margin:20px; */
+    display: flex;
+    justify-content: space-between;
+    rotate: 180deg;
+    width: 300px;
+}
+.bulbTop{
+    width:100px;
+    height: 100px;
+    background-color: gainsboro;
+    border-radius: 50px 50px 35px 35px;
+}
+
+.bulbBottom{
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    margin-left: 25px;
+}
+
+.bulbBtn {
+    width: 30px;
+    height: 60px;
+    background-color: lightgray;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 2px lightblue;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.bulbBtn:hover {
+    background-color: yellow;     
+    box-shadow: 0px 0px 15px 5px gold;
+    transform: scale(1.1);        
+}
+#img1{
+    visibility: hidden;
+}

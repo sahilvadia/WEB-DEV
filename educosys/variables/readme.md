@@ -4,11 +4,11 @@
 
 - GEC global execution context 
 
-- Hoisting : before the execution of the variable and function we exctract it for the memory        allocation called Hoisting.
+- Hoisting: Before the execution of code, variables and functions are extracted for memory allocation. This process is called Hoisting.
 
 
 - init global execution context is created.
-- every time you create a new function created or called it store into call stack and it create new execution context.
+- when ever you create new function or called it store into call stack and it create new execution context.
 
 - in the execution context has 2 phase 
 
