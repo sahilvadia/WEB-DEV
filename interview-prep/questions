@@ -1,0 +1,196 @@
+# 📘 HTML, CSS, JavaScript Interview Questions (Structured by Level)
+
+---
+
+## **Section 1: Intermediate**
+
+### **HTML**
+
+1. What are semantic HTML elements, and why are they important for accessibility and SEO?
+2. Explain the difference between `inline`, `block`, and `inline-block` elements.
+
+#### 3. What is the difference between `id` and `class` attributes in HTML?
+- Both id and class are global attributes used to identify and style elements, but they serve different purposes:
+
+    > **id Attribute**:
+        Used to uniquely identify a single element on the page.
+        Value must be unique within the HTML document.
+        Commonly used with JavaScript for element selection (getElementById).
+        Can be referenced in CSS with a hash (#) selector.
+
+    > **class Attribute**:
+        Used to classify elements into groups.
+        Multiple elements can share the same class.
+        An element can have multiple classes (space-separated).
+        Commonly used in CSS for reusable styling (.classname).
+
+#### 4. How does the `meta` viewport tag affect responsive design?
+- The <meta name="viewport"> tag tells the browser how to control the page’s dimensions and scaling on different devices (especially mobile).
+
+Without it, mobile browsers assume a default virtual viewport (usually ~980px wide) and scale the content down, making everything look tiny.
+
+With it, developers can make the page adapt to the device width, which is the foundation of responsive design.
+
+#### 5. Explain the difference between `<link>` and `@import` for including stylesheets.
+
+| Feature             | `<link>`                                | `@import`                                                    |
+| ------------------- | --------------------------------------- | ------------------------------------------------------------ |
+| **Where used**      | In HTML `<head>`                        | Inside CSS or `<style>`                                      |
+| **Loading**         | Loads **immediately** with HTML parsing | Loads **after the parent stylesheet** is downloaded (slower) |
+| **Performance**     | Better (parallel loading)               | Worse (sequential loading → blocking render)                 |
+| **Browser Support** | Works in all browsers                   | Not supported in very old browsers (< IE5)                   |
+| **Extra Features**  | Can be used for icons, alternate styles | Only CSS import                                              |
+
+
+#### 6. Why do we use `alt` attributes in images, and what happens if we omit them?
+
+The alt (alternative text) attribute in the <img> tag provides a text description of the image.
+
+Purposes of alt:
+
+**Accessibility** → Screen readers read alt text aloud for visually impaired users.
+
+**Fallback content** → If the image fails to load (broken link, slow network), the alt text is displayed instead.
+
+**SEO benefit** → Search engines can index images better when descriptive alt text is provided.
+
+#### 7. What are `data-*` attributes, and how are they used in JavaScript?
+
+The data-* attributes in HTML allow you to store custom data on HTML elements.
+
+The attribute name must start with data-.
+
+They are valid HTML5 attributes.
+
+Commonly used for attaching metadata to elements without using non-standard attributes.
+
+#### 8. Difference between `<section>`, `<article>`, and `<div>` in semantic structure.
+
+9. How does the browser parse and render an HTML document (DOM construction)?
+
+10. What are the differences between `<script>`, `<script async>`, and `<script defer>`?
+
+---
+
+### **CSS**
+
+1. What are pseudo-classes and pseudo-elements? Give examples.
+2. Explain the difference between `relative`, `absolute`, `fixed`, and `sticky` positioning.
+3. How does CSS specificity work? (order of inline, ID, class, element selectors)
+4. Difference between `em`, `rem`, `%`, `vh`, `vw` units.
+5. What is the difference between `inline styles`, `internal CSS`, and `external CSS`?
+6. How do media queries work in responsive web design?
+7. Explain the concept of CSS cascade and inheritance.
+8. What is the difference between `z-index` and stacking context?
+9. What is the difference between Flexbox and Grid layout?
+10. How do CSS transitions differ from CSS animations?
+
+---
+
+### **JavaScript**
+
+1. Difference between `var`, `let`, and `const`.
+2. What are closures, and how do they work?
+3. Explain the difference between `==` and `===`.
+4. What are higher-order functions?
+5. Difference between function declaration and function expression.
+6. Explain how the JavaScript Event Loop works.
+7. What is the difference between synchronous and asynchronous code?
+8. Explain the difference between `null` and `undefined`.
+9. What is hoisting in JavaScript?
+10. Difference between shallow copy and deep copy in JavaScript.
+
+---
+
+## **Section 2: Medium**
+
+### **HTML**
+
+1. Explain how HTML parsing differs between HTML5 and earlier versions.
+2. Difference between `<canvas>` and `<svg>` elements.
+3. What are shadow DOM and custom elements in Web Components?
+4. How does browser handle malformed HTML?
+5. Difference between progressive rendering and reflow in HTML rendering pipeline.
+6. Explain the difference between inline SVG and using `<img>` for SVG.
+7. What is the role of ARIA attributes in accessibility?
+8. Difference between iframes and object/embed tags.
+9. How does preloading resources (`<link rel="preload">`) improve performance?
+10. What are HTML5 form input types, and how do they improve validation?
+
+---
+
+### **CSS**
+
+1. Explain the difference between relative units (`em`, `rem`) and absolute units (`px`).
+2. How do CSS Grid’s implicit and explicit tracks work?
+3. What is the difference between CSS containment and isolation (`contain` property)?
+4. Explain how CSS variables (custom properties) work and their advantages.
+5. What is the difference between GPU-accelerated animations vs CPU-bound animations?
+6. Explain how reflow and repaint differ in browser rendering.
+7. Difference between `will-change` and `transform` properties for performance optimization.
+8. How do CSS logical properties (`margin-inline`, `padding-block`) help in multilingual design?
+9. Explain the difference between CSS stacking order and stacking context.
+10. What are the limitations of Flexbox compared to Grid?
+
+---
+
+### **JavaScript**
+
+1. Explain how prototypal inheritance works in JavaScript.
+2. Difference between function scope and block scope.
+3. Explain the difference between `apply()`, `call()`, and `bind()`.
+4. What is event delegation, and why is it useful?
+5. Explain the difference between microtasks and macrotasks in the Event Loop.
+6. What is the difference between a generator function and an async function?
+7. Explain how JavaScript handles memory management and garbage collection.
+8. Difference between `Object.freeze()`, `Object.seal()`, and `Object.preventExtensions()`.
+9. How does `this` behave differently in arrow functions and regular functions?
+10. Explain how Promises work internally and how they differ from callbacks.
+
+---
+
+## **Section 3: Advanced**
+
+### **HTML**
+
+1. Explain the browser’s Critical Rendering Path (CRP) in detail.
+2. How does the browser handle prefetching, preloading, and lazy loading?
+3. Difference between server-side rendering (SSR), client-side rendering (CSR), and static-site generation (SSG).
+4. How does HTML parsing interact with CSS and JavaScript loading?
+5. Explain how HTML5 introduced APIs like WebSockets, Web Workers, and Service Workers.
+6. What is the role of DOMContentLoaded vs Load event?
+7. How does browser security model handle CORS and sandboxing?
+8. Explain how accessibility tree is built from HTML DOM.
+9. How does HTML5’s offline storage (localStorage, IndexedDB) differ from cookies?
+10. How does HTML rendering differ across browsers, and how is it standardized?
+
+---
+
+### **CSS**
+
+1. Explain how browsers construct the render tree from CSSOM + DOM.
+2. What are CSS Houdini APIs, and how do they extend CSS capabilities?
+3. How does browser handle layout thrashing, and how can you avoid it?
+4. Difference between server-side CSS (critical CSS) and client-side CSS.
+5. How do CSS painting, compositing, and layers affect rendering performance?
+6. Explain the difference between CSS Containment, Isolation, and Scoping in Shadow DOM.
+7. How do CSS subgrid and masonry layout differ from standard grid/flexbox?
+8. What are CSS performance bottlenecks in large applications?
+9. Explain the difference between atomic CSS and utility-first frameworks like Tailwind.
+10. How does CSS cascade work with Shadow DOM and Web Components?
+
+---
+
+### **JavaScript**
+
+1. Explain how the V8 engine compiles and optimizes JavaScript.
+2. Difference between classical inheritance (Java, C#) vs prototypal inheritance (JS).
+3. How does the garbage collector in JavaScript handle cyclic references?
+4. Explain how `async/await` is syntactic sugar over Promises.
+5. What is event loop starvation, and how do you prevent it?
+6. Explain how JavaScript modules (`import/export`) differ from CommonJS (`require/module.exports`).
+7. How does JavaScript handle concurrency vs parallelism (Web Workers)?
+8. Difference between WeakMap, WeakSet, and normal Map/Set in terms of GC.
+9. Explain how memory leaks occur in JS and strategies to prevent them.
+10. How does Just-In-Time (JIT) compilation improve JavaScript performance?
+

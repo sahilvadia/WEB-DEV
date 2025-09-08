@@ -117,7 +117,15 @@ const arrowf = () =>{
     return inner;
 }
 
-let test = arrowf();
-test();
-test();
-test();
+// let test = arrowf();
+// test();
+// test();
+// test();
+
+
+for (var i = 0; i < 10; i++){
+    setTimeout(() => {
+        console.log(i);
+        
+    }, 5000);
+}

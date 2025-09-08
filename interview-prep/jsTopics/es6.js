@@ -107,17 +107,17 @@ zoro.study();
 
 
 
-// 1. let const - block scope - no hoisting issue with Var
+// 1. let const - block scope - no hoisting issue with var
 // 2. arrow function
-// 9. classes, constructor, extends, super
-// 11. promises - better way to handle async operation.
-// 5. default param 
-// 12. for of loop - iterator over iteration
-// 6. rest param ...args in functions
-// 13. map and set
-// 8. inhance object literals - variable , function, compute shorthand property
-// 10. modules - import export
-// 3. tempelate structure (`${}`)
-// 7. spread param extends array and object element as individual element
-// 4. destructuring assignment - array, object, function 
+// 3. classes, constructor, extends, super
+// 4. promises - better way to handle async operations
+// 5. default param
+// 6. for...of loop - iterate over iterables
+// 7. rest param ...args in functions
+// 8. map and set
+// 9. enhanced object literals - variable, function, computed property shorthand
+// 10. modules - import/export
+// 11. template literals (`${}`)
+// 12. spread operator - expand array and object elements as individual elements
+// 13. destructuring assignment - array, object, function parameters
 // 14. symbols
