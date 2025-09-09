@@ -19,6 +19,9 @@
 
     <div class="container">
         <div class="contant">
+            <h2>Throttle Function Example</h2>
+            <h4>Slow Mode</h4>
+            <p class="slowsend-time"></p>
             <div class="messages"></div>
             <div class="chat">
                 <form id="messageForm">
@@ -28,6 +31,26 @@
                     <option value="10">10 sec</option>
                 </select>
                 <input type="text" name="message" id="message"  placeholder="Message">
+                <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- debounce -->
+
+        <div class="contant">
+            <h2>Debounce Function Example</h2>
+            <p>open log for better understanding</p>
+            <div class="messages-debounce"></div>
+            <div class="d-chat">
+                <form id="messageForm-debounce">
+
+                     <select name="timeinterval" class="timeinterval" id="">
+                    <option value="2">2 sec</option>
+                    <option value="5">5 sec</option>
+                    <option value="10">10 sec</option>
+                </select>
+                <input type="text" name="message" id="message-debounce"  placeholder="Message">
                 <button type="submit">Send</button>
                 </form>
             </div>
