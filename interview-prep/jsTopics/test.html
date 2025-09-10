@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Search</title>
+  <style>
+    #results div { padding: 5px; border-bottom: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <input type="text" id="searchBox" placeholder="Search..." />
+  <div id="results"></div>
+
+  <script>
+    // Mock API with Promise
+    function mockApi(query) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve([query + " Result 1", query + " Result 2", query + " Result 3"]);
+        }, 500); // simulate network delay
+      });
+    }
+
+    // Closure for caching
+    const searchWithCache = (() => {
+      const cache = {};
+      
+      return async function(query) {
+        if (cache[query]) {
+          console.log("From Cache:", query);
+          return cache[query];
+        }
+        const result = await mockApi(query);
+        cache[query] = result;
+        return result;
+      };
+    })();
+
+    // Debounce function
+    function debounce(fn, delay) {
+      let timer;
+      return function(...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn.apply(this, args), delay);
+      };
+    }
+
+    // Throttle function
+    function throttle(fn, limit) {
+      let lastCall = 0;
+      return function(...args) {
+        const now = Date.now();
+        if (now - lastCall >= limit) {
+          lastCall = now;
+          fn.apply(this, args);
+        }
+      };
+    }
+
+    // Display results
+    function displayResults(results) {
+      const container = document.getElementById("results");
+      container.innerHTML = "";
+      results.forEach(r => {
+        const div = document.createElement("div");
+        div.textContent = r;
+        container.appendChild(div);
+      });
+    }
+
+    // Main search handler
+    async function handleSearch(event) {
+      const query = event.target.value.trim();
+      if (!query) return;
+      const results = await searchWithCache(query);
+      displayResults(results);
+    }
+
+    // Attach handler with debounce + throttle
+    const searchBox = document.getElementById("searchBox");
+    searchBox.addEventListener("input", debounce(throttle(handleSearch, 2000), 300));
+  </script>
+</body>
+</html>
