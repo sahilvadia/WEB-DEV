@@ -24,11 +24,12 @@ const user ={
     },
     greet: function(){
         console.log(`hello ${this.name}`);
+        console.log(this.name)
     }
 }
 
-// user.delayGreet();
-// user.greet();
+user.delayGreet();
+user.greet();
 
 const users = {
     name : "zoro",

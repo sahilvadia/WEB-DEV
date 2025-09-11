@@ -1,4 +1,4 @@
-# Beginner
+> # Beginner
 
 ## 1. Execution Context & Scope
 
@@ -10,7 +10,7 @@
     - lexical environment
     - this binding
 
-> ### Type of execution context
+### Type of execution context
 #### 1. Global Execution Context
 - created when js program starts.
 - provides global object and this.
@@ -65,72 +65,171 @@
 - only declarations are hoisted, not initializations/ assignments.
 - this is why sometimes see undefined instead of a ReferenceError.
 
-this keyword (basic usage)
+## this keyword (basic usage)
+- this refers to the object that is currently executing the function.
+- Its value depends on how the function is called, not where it is defined.
 
-let / const / var
+## Explain var, let, and const.
 
-Arrow functions
+feature         var                 let            const
+Scope       function-scope      block-scope     block-scope
+Hoisting    hoisted(undefined)  hoisted(error)  hoisted(error)
+re-declare  allowed             not-allowed     not-allowed
+re-assign   allowed             allowed         not-allowed
 
-Template literals
+## Arrow functions
+- Arrow functions are a shorter syntax for writing functions introduced in ES6.
+- Unlike normal functions, they do not have their own this, arguments, super, or new.target
 
-Destructuring
 
-Spread & Rest operators
+// | Feature           | Normal Function                                  | Arrow Function                                   |
+// | :---------------- | :----------------------------------------------- | :----------------------------------------------- |
+// | `this` binding    | Dynamic, depends on how the function is called.  | Lexical, inherits `this` from the parent scope.  |
+// | `arguments` object | Has its own `arguments` object.                  | Does not have its own `arguments` object.        |
+// | `new` keyword     | Can be used as a constructor with `new`.         | Cannot be used as a constructor with `new`.      |
+// | `prototype` property | Has a `prototype` property.                      | Does not have a `prototype` property.            |
+// | Syntax            | `function name(args) { ... }`                    | `(args) => { ... }` or `args => ...`             |
+// | Return            | `return` keyword is explicit.                    | Implicit return for single-expression bodies.    |
 
-Equality (== vs ===)
 
-JSON basics
 
-Intermediate
+## Template literals
 
-Closures
+- Introduced in ES6.
+- Template literals use backticks.
+- They support string interpolation, multi-line strings, and expression embedding.
+- Tagged templates allow custom string processing.
 
-Higher-Order Functions
 
-Currying & Partial Application
+## Destructuring
 
-Prototypal Inheritance
+- Destructuring is a syntax to unpack values from arrays or objects into variables.
+- Makes code shorter and more readable than manual property access.
+- Supports default values, nested structures, and renaming variables.
 
-Event Delegation
+## Spread & Rest operators
+- Both use ... but meaning depends on context.
+- Spread expands an array/object into individual elements.
+- Rest collects remaining values into an array/object.
 
-Shallow vs Deep Copy
+- Spread creates shallow copies, not deep.
+- Rest must be the last parameter in function arguments.
 
-Error Handling & try/catch
+## Equality (== vs ===)
+- == → loose equality, performs type coercion before comparison.
+- === → strict equality, compares both value and type.
 
-OOP in JS (classes, constructors, new)
+## JSON basics
+- JSON (JavaScript Object Notation) is a lightweight text format for data exchange.
+- Keys must be strings (double quotes), values can be strings, numbers, booleans, arrays, objects, or null.
+- Used for APIs, configuration, and storage.
 
-DOM Manipulation & Events (bubbling, capturing, stopPropagation)
+> # Intermediate
 
-Modules (import/export, CommonJS vs ESM)
+## Closures
+- A closure is when a function “remembers” the variables from its outer scope, even after the outer function has finished executing.
+- if variable not present in outer scope of function it goes for global variable to resolve the variable if not found global give error
+- closure is function with lexical scope.
 
-Symbols & BigInt
 
-Sets, Maps, WeakSet, WeakMap
+## Higher-Order Functions
+- A Higher-Order Function (HOF) is a function that either takes another function as an argument or returns a function.
+- Enables abstraction, reusability, and functional programming patterns.
+- Common HOFs: map, filter, reduce, forEach.
 
-Optional Chaining & Nullish Coalescing
 
-Advanced
+## Currying & Partial Application
+- currying is the process of transforming a function with multiple arguments into a sequence of functions that each take a single argument.
+- Currying transforms a function with multiple arguments into a series of functions each taking one argument.
+- Partial Application fixes some arguments of a function and returns a new function for the rest.
 
-Event Loop (Call Stack, Microtask vs Macrotask)
 
-Promises & async/await
+## Prototypal Inheritance
+- Prototypal Inheritance is a mechanism in JavaScript where objects inherit properties and methods from other objects via the prototype chain.
 
-Callback Hell vs Promises vs async/await
+## Event Delegation
+- Event delegation is a technique where instead of attaching event listeners to multiple child elements, you attach a single event listener to a common parent.
 
-Debouncing & Throttling
+## Shallow vs Deep Copy
+- A shallow copy only duplicates the first level, sharing nested objects by reference. A deep copy creates a fully independent clone of all levels. Shallow is faster but riskier; deep is safer but costlier.
 
-Promise utilities (all, race, allSettled, any)
+## Error Handling & try/catch
+Error handling in JavaScript ensures that when something goes wrong, your program doesn’t crash but instead gracefully manages the failure.
+This is mainly done using the try...catch...finally construct.
 
-Garbage Collection & Memory Management (WeakMap/WeakSet use cases)
+## OOP in JS (classes, constructors, new)
 
-Generators & Iterators
+## DOM Manipulation & Events (bubbling, capturing, stopPropagation)
 
-Performance optimizations (lazy loading, memoization, etc.)
+## Modules (import/export, CommonJS vs ESM)
 
-Functional Programming (immutability, pure functions)
+## Symbols & BigInt
 
-Advanced this behavior (bind, call, apply)
+## Sets, Maps, WeakSet, WeakMap
 
-Prototype chain deep dive
+## Optional Chaining & Nullish Coalescing
 
-Advanced async patterns (parallel vs sequential execution)
+>> ## Advanced
+
+## Event Loop (Call Stack, Microtask vs Macrotask)
+
+## Promises & async/await
+- A Promise represents the eventual result of an async operation. async/await is built on top of Promises, making async code look synchronous and easier to read.
+
+
+    ### Promise
+    - A Promise is an object representing the eventual completion or failure of an asynchronous operation.
+
+    - States: pending → fulfilled → rejected
+    - Methods: .then(), .catch(), .finally()
+
+    ### async/await
+
+    - async/await is syntactic sugar over Promises for cleaner code.
+    - async makes a function return a Promise.
+    - await pauses execution until a Promise settles.
+
+| Feature        | Promises       | async/await                |
+| -------------- | -------------- | -------------------------- |
+| Syntax         | `.then/.catch` | Cleaner, synchronous style |
+| Error Handling | `.catch()`     | `try/catch`                |
+| Readability    | Nested chains  | Flat, easy to follow       |
+
+
+## Callback Hell vs Promises vs async/await
+
+| Feature        | Callback Hell    | Promises              | async/await          |
+| -------------- | --------------   | --------------------- | -------------------- |
+| Readability    | ❌ Hard, nested  | ⚠️ Better, chained    | ✅ Best, flat code    |
+| Error Handling | ❌ Messy         | ✅ `.catch()`         | ✅ `try/catch`        |
+| Flow Control   | ❌ Hard          | ⚠️ Sequential, chain  | ✅ Natural, sync-like |
+| Use Case       | Legacy code      | Modern async handling | Cleanest async code  |
+
+
+## Debouncing & Throttling
+
+### debouncing
+- Debouncing ensures a function is executed only after a specified delay has passed since the last call.
+- Useful when you want to limit how often a function runs during rapid events.
+- Prevents multiple API calls for every keystroke → only calls after user stops typing.
+
+### Throttling
+- Throttling ensures a function is executed at most once in a fixed interval, no matter how many times it’s triggered.
+
+youtube chat section with slow mode you only message with-in same time interval
+
+## Promise utilities (all, race, allSettled, any)
+
+## Garbage Collection & Memory Management (WeakMap/WeakSet use cases)
+
+## Generators & Iterators
+
+## Performance optimizations (lazy loading, memoization, etc.)
+
+## Functional Programming (immutability, pure functions)
+
+## Advanced this behavior (bind, call, apply)
+
+## Prototype chain deep dive
+
+## Advanced async patterns (parallel vs sequential execution)
