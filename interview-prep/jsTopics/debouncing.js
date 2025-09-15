@@ -15,7 +15,7 @@ const search = (query) =>{
 
 // search("hello world");
 
-const searchingWithDebounce = debounce(search, 1000);
+const searchingWithDebounce = debounce(search, 0);
 searchingWithDebounce("hello");
 searchingWithDebounce("hello w");
 searchingWithDebounce("hello world");

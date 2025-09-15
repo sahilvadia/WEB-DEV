@@ -1,8 +1,54 @@
 > # Beginner
 
-## 1. Execution Context & Scope
+## Q1. What are the different data types in JavaScript?
 
-- Execution context is an enviroment in which javascript code id executed
+### primitive types:
+- Numbers : integer, float, Nan, Infinity
+- String : sequence of characters
+- Boolean : true or false
+- Undefined : declared but not assigned value
+- Null : explicitly assigned null value
+- Symbol : unique identifier
+- BigInt : large integers
+
+### Reference types:
+- Object : key-value pairs
+- Array : sequence of values
+- Function : block of code that performs a specific task
+- Date : Represents date and time
+- Error : Represents an error object
+- RegExp : Regular expression object
+- Map : key-value pairs
+- Set : collection of unique values
+- WeakMap : key-value pairs with weak references
+- WeakSet : collection of unique values with weak references
+
+
+## Q2. What is the difference between == and === in JavaScript?
+- == → loose equality, performs type coercion before comparison.
+- === → strict equality, compares both value and type.
+
+## Q3. how js handle type coercion?
+- it handle automatically 
+    - String + number it concate value and convert into String
+    - number * String it multiple the value and convert into Number.
+
+## Q4. Explain var, let, and const.
+
+feature         var                 let            const
+Scope       function-scope      block-scope     block-scope
+Hoisting    hoisted(undefined)  hoisted(error)  hoisted(error)
+re-declare  allowed             not-allowed     not-allowed
+re-assign   allowed             allowed         not-allowed
+
+## Q5. What are closures in JavaScript?
+
+- A closure is when a function “remembers” the variables from its outer scope, even after the outer function has finished executing.
+
+
+## 6. Execution Context & Scope
+
+- Execution context is an enviroment in which javascript code is executed
 - it define the variable, function, and object are accessible at a given time.
 - think of it as a container that holds information about:
 
@@ -21,7 +67,7 @@
 - Each call creates a new execution context with its own scope.
 
 #### 3. Eval Execution Context
-- rarely userd, created when eval() is called.
+- rarely used, created when eval() is called.
 
 
 > ### phases of execution context
@@ -85,9 +131,9 @@ re-assign   allowed             allowed         not-allowed
 // | Feature           | Normal Function                                  | Arrow Function                                   |
 // | :---------------- | :----------------------------------------------- | :----------------------------------------------- |
 // | `this` binding    | Dynamic, depends on how the function is called.  | Lexical, inherits `this` from the parent scope.  |
-// | `arguments` object | Has its own `arguments` object.                  | Does not have its own `arguments` object.        |
+// | `arguments` object| Has its own `arguments` object.                  | Does not have its own `arguments` object.        |
 // | `new` keyword     | Can be used as a constructor with `new`.         | Cannot be used as a constructor with `new`.      |
-// | `prototype` property | Has a `prototype` property.                      | Does not have a `prototype` property.            |
+// | `prototype` property | Has a `prototype` property.                   | Does not have a `prototype` property.            |
 // | Syntax            | `function name(args) { ... }`                    | `(args) => { ... }` or `args => ...`             |
 // | Return            | `return` keyword is explicit.                    | Implicit return for single-expression bodies.    |
 
@@ -229,7 +275,38 @@ youtube chat section with slow mode you only message with-in same time interval
 ## Functional Programming (immutability, pure functions)
 
 ## Advanced this behavior (bind, call, apply)
+- call(thisArg, arg1, arg2, …) → Invokes immediately, arguments passed individually.
+- apply(thisArg, [args]) → Invokes immediately, arguments passed as an array.
+- bind(thisArg, arg1, arg2, …) → Returns a new function with fixed this, doesn’t run immediately.
 
 ## Prototype chain deep dive
+- The prototype chain is the mechanism by which JavaScript objects inherit properties and methods from other objects.
+- Every object in JS has a hidden property [[Prototype]] (accessible via __proto__).
+- If a property/method is not found on the object, JS looks up the chain until Object.prototype.
+- The chain ends at null.
+
+- The prototype chain is how JavaScript objects inherit: if a property isn’t found on the object, it’s searched up the chain (obj → prototype → Object.prototype → null).”
 
 ## Advanced async patterns (parallel vs sequential execution)
+
+### 1. Sequential Execution
+- Tasks run one after another, each waiting for the previous to finish.
+- Useful when tasks are dependent.
+
+```
+async function sequential() {
+  await task1();
+  await task2();
+  await task3();
+}
+```
+
+### 2. Parallel Execution
+- Tasks run at the same time (non-blocking).
+- Useful when tasks are independent.
+
+```
+async function parallel() {
+  await Promise.all([task1(), task2(), task3()]);
+}
+```
