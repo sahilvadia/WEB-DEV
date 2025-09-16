@@ -109,11 +109,19 @@ re-assign   allowed             allowed         not-allowed
 - Hoisting is javascript defalut behaviour of moving variable and function declarations to the top of their scope during the creation phase of the execution context.
 
 - only declarations are hoisted, not initializations/ assignments.
-- this is why sometimes see undefined instead of a ReferenceError.
+- that's why sometimes see undefined instead of a ReferenceError.
 
 ## this keyword (basic usage)
 - this refers to the object that is currently executing the function.
 - Its value depends on how the function is called, not where it is defined.
+
+## temporal dead zone (TDZ)
+- the temporal dead zone is the time between when a variable is hoisted and when it is initialized with value
+  during this period, accessing the variable will throw a refrence error.
+
+- Why does TDZ exist?
+    - To prevent using variables before they are properly declared.
+    - It enforces safer coding by ensuring variables aren’t accidentally accessed before initialization.
 
 ## Explain var, let, and const.
 
@@ -218,6 +226,17 @@ This is mainly done using the try...catch...finally construct.
 >> ## Advanced
 
 ## Event Loop (Call Stack, Microtask vs Macrotask)
+- The Event Loop manages async execution: microtasks (Promises) run before macrotasks (setTimeout) once the call stack is clear.
+- Call Stack → Executes synchronous code line by line.
+- Event Loop → Keeps checking: if the stack is empty, it pushes tasks from queues.
+
+- Macrotasks → Scheduled tasks like
+- setTimeout, setInterval, setImmediate, I/O, DOM events.
+- Run after microtasks.
+
+- Microtasks → Higher priority tasks like
+- Promise.then/catch/finally, queueMicrotask, MutationObserver.
+- Run immediately after current stack, before macrotasks.
 
 ## Promises & async/await
 - A Promise represents the eventual result of an async operation. async/await is built on top of Promises, making async code look synchronous and easier to read.
@@ -265,6 +284,24 @@ This is mainly done using the try...catch...finally construct.
 youtube chat section with slow mode you only message with-in same time interval
 
 ## Promise utilities (all, race, allSettled, any)
+
+### 1. Promise.all()
+- Waits for all promises to fulfill.
+- If any promise rejects, it fails immediately.
+- Use when tasks are independent and you need all results.
+
+### 2. Promise.race()
+- Resolves/rejects with the first settled promise (fastest one).
+
+### 3. Promise.allSettled()
+- Waits for all promises to settle (fulfilled or rejected).
+- Returns an array of {status, value | reason}.
+- Use when you want all outcomes regardless of success/failure (e.g., logging).
+
+### 4. Promise.any()
+- Resolves with the first fulfilled promise.
+- Ignores rejections unless all reject → then returns AggregateError.
+- Use when you need at least one success.
 
 ## Garbage Collection & Memory Management (WeakMap/WeakSet use cases)
 
