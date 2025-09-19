@@ -214,6 +214,8 @@ This is mainly done using the try...catch...finally construct.
 ## OOP in JS (classes, constructors, new)
 
 ## DOM Manipulation & Events (bubbling, capturing, stopPropagation)
+The DOM is a programming interface that represents an HTML/XML document as a tree of objects.
+It lets JavaScript access, update, add, or delete elements, attributes, and styles dynamically.
 
 ## Modules (import/export, CommonJS vs ESM)
 
